@@ -1,0 +1,47 @@
+% sets document class
+\documentclass[12pt, onecolumn, oneside, a4paper, hidelinks]{report}
+
+% latex metadatas
+\input{config/preamble.sty}
+\input{config/about.tex}
+
+\begin{document}
+  \sloppy
+
+  % covers
+  \input{sections/cover.tex}
+
+  \pagenumbering{roman}
+  \setcounter{page}{0}
+
+  \input{sections/abstrak.tex}
+  \input{sections/abstract.tex}
+  \input{sections/agreement.tex}
+
+  \input{sections/guidelines.tex}
+  \input{sections/dedication.tex}
+  \input{sections/preface.tex}
+
+  \begin{spacing}{1}
+      \input{sections/tableofcontents.tex}
+      \input{sections/tableofappendix.tex}
+      \input{sections/tableoffigures.tex}
+      \input{sections/tableoftables.tex}
+      \input{sections/glossary.tex}
+  \end{spacing}
+  
+  \clearpage
+  \renewcommand\chaptertitlename{Bab}
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+
+  \input{sections/chapter-1/_index.tex}
+  \input{sections/chapter-2/_index.tex}
+  \input{sections/chapter-3/_index.tex}
+  \input{sections/chapter-4/_index.tex}
+  \input{sections/chapter-5/_index.tex}
+  
+  \input{sections/bibliography.tex}
+
+  \input{sections/appendix/_index.tex}
+\end{document}
